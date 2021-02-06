@@ -1,18 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="JSON Loader"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_gravity="left"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:text="Изучайте актуальные темы"
+            android:textSize="30sp" />
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="Маркетинг"
+
+            />
+        <TextView
+            android:id="@+id/marketing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="Бизнес и Управление"
+
+            />
+        <TextView
+            android:id="@+id/business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="27"
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="Дизайн и UX"
+
+            />
+        <TextView
+            android:id="@+id/design"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="Программирование"
+
+            />
+        <TextView
+            android:id="@+id/coding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="Аналитика"
+
+            />
+        <TextView
+            android:id="@+id/analytic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+            android:padding="1dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="MBA"
+
+            />
+        <TextView
+            android:id="@+id/mba"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:gravity="left"
+
+            android:textColor="#7A8089"
+            android:textSize="15sp"
+            android:text="@string/сourses"
+
+            />
+        <LinearLayout
+            android:id="@+id/ll_progress_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:minHeight="1dp"
+                android:progress="0"
+                android:indeterminate="false"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
