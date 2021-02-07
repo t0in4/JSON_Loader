@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val spannable =  SpannableString("Изучайте\nактуальные темы")
         spannable.setSpan(
-                ForegroundColorSpan(Color.RED),
+                ForegroundColorSpan(Color.BLUE),
                 9, // start
                 24, // end
                 Spannable.SPAN_EXCLUSIVE_INCLUSIVE
@@ -106,19 +106,28 @@ class MainActivity : AppCompatActivity() {
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
             cancelProgressDialog()
-            Log.i("JSON RESPONSE RESULT", result.toString())
+            Log.i("JSON RESPONSE RESULT", result.toString()) // printing whole json in logcat
             val jsonObject = JSONObject(result)
             val data = jsonObject.optJSONArray("data")
             val need = mutableListOf<String>()
+            // below we initializing intent
+            val intent = Intent(this@MainActivity, MainActivity::class.java)
+            var first: String = "" //marketing
+            var second: String = "" // and so on
+            var third: String = ""
+            var fourth: String = ""
+            var fifth: String = ""
+            var sixth: String = "" //mba
             for (i in 0 until data.length()) {
-                var counter = 0
-                need.clear()
+
+                need.clear() //clearing list of strings for the purpose of using it like an eax register
                 var ourObject: JSONObject = data[i] as JSONObject
                 val groups = ourObject.getJSONArray("groups")
                 val direction = ourObject.getJSONObject("direction")
                 val directionTitle = direction.optString("title")
                 println(directionTitle)
                 for (z in 0 until groups.length()) {
+                    // testing json loading by printing every single step
                     //println("working")
                     val itemsObject: JSONObject = groups[z] as JSONObject
                     //println("working")
@@ -127,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                     for (x in 0 until items.length()) {
                         //println("working")
                         //println(items[x])
-                        counter++
+
                         val titleObject: JSONObject = items[x] as JSONObject
 
                         val titleString = titleObject.optString("title")
@@ -138,61 +147,95 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                /*println(need.size)
-                println(need)
-                println(counter)*/
+
                 when(directionTitle) {
                     "Маркетинг" -> {
+                        intent.putExtra(Constants.MARKETING, need.size.toString())
+                        first = intent.getStringExtra(Constants.MARKETING).toString()
+                    }
+                    // in below variant we can use only one variable use_name without above in
+                    // out of for scope 6 variables (first, second, third and so on)
+                    // but every time we need to initialize intent
+                    // in some cases (testing) this one is handy bcz outlook is equal
+                    /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.MARKETING, need.size.toString())
-                        val username = intent.getStringExtra(Constants.MARKETING)
-                        marketing.text = username
+                        val use_name = intent.getStringExtra(Constants.MARKETING)
+                        marketing.text = use_name
                         startActivity(intent)
                         finish()
 
+                    }*/
+                    "Бизнес и управление" ->  {
+                        intent.putExtra(Constants.BUSINESS, need.size.toString())
+                    second = intent.getStringExtra(Constants.BUSINESS).toString()
                     }
-                    "Бизнес и управление" -> {
+                        /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.BUSINESS, need.size.toString())
-                        val username = intent.getStringExtra(Constants.BUSINESS)
-                        business.text = username
+                        val use_name = intent.getStringExtra(Constants.BUSINESS)
+                        business.text = use_name
                         startActivity(intent)
                         finish()
-                    }
+                    }*/
                     "Программирование" -> {
+                        intent.putExtra(Constants.CODING, need.size.toString())
+                        third = intent.getStringExtra(Constants.CODING).toString()
+                    }
+                        /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.CODING, need.size.toString())
-                        val username = intent.getStringExtra(Constants.CODING)
-                        coding.text = username
+                        val use_name = intent.getStringExtra(Constants.CODING)
+                        coding.text = use_name
                         startActivity(intent)
                         finish()
-                    }
+                    }*/
                     "Дизайн и UX" -> {
+                        intent.putExtra(Constants.DESIGN, need.size.toString())
+                        fourth = intent.getStringExtra(Constants.DESIGN).toString()
+                    }
+                        /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.DESIGN, need.size.toString())
-                        val username = intent.getStringExtra(Constants.DESIGN)
-                        design.text = username
+                        val use_name = intent.getStringExtra(Constants.DESIGN)
+                        design.text = use_name
                         startActivity(intent)
                         finish()
-                    }
+                    }*/
                     "Аналитика" -> {
+                        intent.putExtra(Constants.ANALYTIC, need.size.toString())
+                        fifth = intent.getStringExtra(Constants.ANALYTIC).toString()
+                    }
+                        /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.ANALYTIC, need.size.toString())
-                        val username = intent.getStringExtra(Constants.ANALYTIC)
-                        analytic.text = username
+                        val use_name = intent.getStringExtra(Constants.ANALYTIC)
+                        analytic.text = use_name
                         startActivity(intent)
                         finish()
-                    }
+                    }*/
                     "MBA" -> {
+                        intent.putExtra(Constants.MBA, need.size.toString())
+                        sixth = intent.getStringExtra(Constants.MBA).toString()
+                    }
+                /*{
                         val intent = Intent(this@MainActivity, MainActivity::class.java)
                         intent.putExtra(Constants.MBA, need.size.toString())
-                        val username = intent.getStringExtra(Constants.MBA)
-                        mba.text = username
+                        val use_name = intent.getStringExtra(Constants.MBA)
+                        mba.text = use_name
                         startActivity(intent)
                         finish()
-                    }
+                    }*/
                 }
                 }
+            marketing.text = first
+            business.text = second
+            coding.text = third
+            design.text = fourth
+            analytic.text = fifth
+            mba.text = sixth
+            startActivity(intent)
+            finish()
         }
 
 
