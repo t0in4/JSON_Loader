@@ -234,8 +234,8 @@ class MainActivity : AppCompatActivity() {
             design.text = fourth
             analytic.text = fifth
             mba.text = sixth
-            startActivity(intent)
-            finish()
+            //startActivity(intent)
+            //finish()
         }
 
 
